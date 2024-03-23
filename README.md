@@ -36,6 +36,22 @@ Make example for this keyboard (after setting up your build environment):
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
+<br>
 
+### 한영 전환시 이슈
+- OS단의 한/영 상태를 받아올 방법이 없음.
+<br>
+<br>
+  
+### 한영 전환시 여러가지 이슈 해결 방법
+윈도우
+- 오토핫키 사용
+- 날개셋 ([링크](http://moogi.new21.org/prg4.html))
+- 윈도우 입력기를 두개로 구성해서 입력기 전환 단축키 설정  
+
+맥
+- 해머스푼 : 전환 단축키를 두개 만듬
+<br>
+<br>
 ---
 qmk `1.1.5`
