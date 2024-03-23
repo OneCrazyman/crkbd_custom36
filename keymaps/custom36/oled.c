@@ -1,4 +1,4 @@
-#ifdef OLED_ENABLE
+#include "keymap.h"
 
 oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
     if (!is_keyboard_master()) {
@@ -6,52 +6,42 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
     }
     return rotation;
 }
-#define BASE 0
-#define _MEDIA 1
-#define _NAV 2
-#define _MOUSE 3
-#define _SYM 4
-#define _NUM 5
-#define _FUN 6
-#define _RGB 7
-#define _SET2 8 //hangle_2 qwerty
-#define _PUBG 9 //gaming
 
 static void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
-        case 0:
+        case BASE:
             oled_write_ln_P(PSTR("BASE"), false);
             break;
-        case 1:
+        case _MEDIA:
             oled_write_ln_P(PSTR("_MEDIA"), false);
             break;
-        case 2:
+        case _NAV:
             oled_write_ln_P(PSTR("_NAV"), false);
             break;
-        case 3:
+        case _MOUSE:
             oled_write_ln_P(PSTR("_MOUSE"), false);
             break;
-        case 4:
+        case _SYM:
             oled_write_ln_P(PSTR("_SYM"), false);
             break;
-        case 5:
+        case _NUM:
             oled_write_ln_P(PSTR("_NUM"), false);
             break;
-        case 6:
+        case _FUN:
             oled_write_ln_P(PSTR("_FUN"), false);
             break;
-        case 7:
+        case _RGB:
             oled_write_ln_P(PSTR("_RGB"), false);
             break;
-        case 8:
+        case _SET2:
             oled_write_ln_P(PSTR("_SET2"), false);
             break;
-        case 9:
+        case _PUBG:
             oled_write_ln_P(PSTR("_PUBG"), false);
             break;
-        case 10:
-            oled_write_ln_P(PSTR("_PUBG_LAYER"), false);
+        case _PSUB:
+            oled_write_ln_P(PSTR("_PUBG_SUB"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
@@ -157,4 +147,3 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     }
     return process_record_user(keycode, record);
 }
-#endif // OLED_ENABLE
