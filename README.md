@@ -45,7 +45,6 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 ### 한영 전환시 이슈
 - 한글과 영어 레이어가 달라서 한영 각각의 레이어 상태를 동기화해야 함
 - OS단의 한/영 상태를 받아올 방법이 없음
-<br>
   
 ### 해결 방법
 윈도우
@@ -55,6 +54,6 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 맥
 - 해머스푼 : 전환 단축키를 두 개 만듬
-<br>
+- 
 -------------------------------
 qmk `1.1.5`
