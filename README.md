@@ -4,10 +4,10 @@ Refer to Miryoku Layout (COLEMAK-DH)
 ![alt text](https://github.com/manna-harbour/miryoku/raw/master/data/cover/miryoku-kle-cover.png)  
 
 BASE Layer - COLEMAKDH  
-![alt text](BASE.png)
+![alt text](BASE.PNG)
 
 SET2 Layer - QWERTY  
-![alt text](SET2.png)
+![alt text](SET2.PNG)
 
 [home_row_mods_tutorial](https://precondition.github.io/home-row-mods)  
 GCAS mod
