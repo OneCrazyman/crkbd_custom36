@@ -13,30 +13,31 @@
 
 enum layer_names{
     BASE, // 0
-    _SET2, // 1
+    // _SET2, // 1
+    _RGB,
+    _PUBG,
+    _PSUB,
+    _MSW,
     _MEDIA, // ...
     _NAV,
     _MOUSE,
     _SYM,
     _NUM, 
     _FUN,
-    _RGB,
-    _PUBG,
-    _PSUB,
 };
 
 /* COLEMAK-DH_BASE */
 // Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_R LCTL_T(KC_R)
-#define HOME_S LALT_T(KC_S)
-#define HOME_T LSFT_T(KC_T)
+// #define HOME_A LGUI_T(KC_A)
+// #define HOME_R LCTL_T(KC_R)
+// #define HOME_S LALT_T(KC_S)
+// #define HOME_T LSFT_T(KC_T)
 
-// Right-hand home row mods
-#define HOME_N RSFT_T(KC_N)
-#define HOME_E RALT_T(KC_E)
-#define HOME_I RCTL_T(KC_I)
-#define HOME_O RGUI_T(KC_O)
+// // Right-hand home row mods
+// #define HOME_N RSFT_T(KC_N)
+// #define HOME_E RALT_T(KC_E)
+// #define HOME_I RCTL_T(KC_I)
+// #define HOME_O RGUI_T(KC_O)
 
 /* QWERTY_SET2 */
 // Left-hand home row mods

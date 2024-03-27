@@ -4,34 +4,32 @@ Refer to Miryoku Layout (COLEMAK-DH)
 ![alt text](https://github.com/manna-harbour/miryoku/raw/master/data/cover/miryoku-kle-cover.png)  
 
 BASE Layer - COLEMAKDH  
-![alt text](BASE.png)
-
-SET2 Layer - QWERTY  
-![alt text](SET2.png)
+![alt text](docs/BASE.png)
 
 [home_row_mods_tutorial](https://precondition.github.io/home-row-mods)  
-GCAS mod
+Home Row Mod : `GCAS`
 ```c
+/* QWERTY_SET2 */
 // Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_R LCTL_T(KC_R)
-#define HOME_S LALT_T(KC_S)
-#define HOME_T LSFT_T(KC_T)
+#define S_HOME_A LGUI_T(KC_A)
+#define S_HOME_S LCTL_T(KC_S)
+#define S_HOME_D LALT_T(KC_D)
+#define S_HOME_F LSFT_T(KC_F)
 
 // Right-hand home row mods
-#define HOME_N RSFT_T(KC_N)
-#define HOME_E RALT_T(KC_E)
-#define HOME_I RCTL_T(KC_I)
-#define HOME_O RGUI_T(KC_O)
-//
-```
+#define S_HOME_J RSFT_T(KC_J)
+#define S_HOME_K LALT_T(KC_K)
+#define S_HOME_L RCTL_T(KC_L)
+#define S_HOME_SCLN RGUI_T(KC_SCLN)
 
-QWERTY레이어(SET2)를 올리고 한영키 입력, 재입력시 Base Layer로 돌아옴
-```c
-//Macro
-enum custom_keycodes {
-    TG_LNG,  //SET2로 전환 및 한영키 실행
-};
+/* LT KEYS */
+// Layer-tab key mods
+#define MEDIA_ESC LT(_MEDIA,KC_ESC)
+#define NAV_SPC LT(_NAV,KC_SPC)
+#define MOUSE_TAB LT(_MOUSE,KC_TAB)
+#define SYM_ENT LT(_SYM,KC_ENT)
+#define NUM_BSPC LT(_NUM,KC_BSPC)
+#define FUN_DEL LT(_FUN,KC_DEL)
 ```
 
 Make example for this keyboard (after setting up your build environment):
@@ -56,5 +54,25 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 맥
 - 해머스푼 : 전환 단축키를 두 개 만듬
 <br>
+
+## 날개셋 적용
+![alt text](docs/image.png)  
+설치: [링크](http://moogi.new21.org/prg4.html)  
+
+![alt text](docs/taskmenu.png)  
+제어판 진입
+
+![alt text](docs/layout.png)  
+`0,1,2` 레이아웃 생성
+
+![alt text](docs/set2layout.png)  
+**전처리기 추가** : 한영키(KC_LNG1)입력 시 레이아웃 변경
+
+![alt text](docs/colemaklayout.png)  
+![alt text](docs/SCLN.png) 기존 LT키의 매핑키인 KC_SCLN를 살리기 위해 레이아웃 수정 `:;` `'` 
+
+### 레이아웃 설정 파일 공유 
+ [`colemak.set`](docs/colemak.set) 또는 [`colemak.xml`](docs/colemak.xml)
+
 -------------------------------
 qmk `1.1.5`

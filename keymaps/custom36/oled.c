@@ -34,14 +34,17 @@ static void oled_render_layer_state(void) {
         case _RGB:
             oled_write_ln_P(PSTR("_RGB"), false);
             break;
-        case _SET2:
-            oled_write_ln_P(PSTR("_SET2"), false);
-            break;
+        // case _SET2:
+        //     oled_write_ln_P(PSTR("_SET2"), false);
+        //     break;
         case _PUBG:
             oled_write_ln_P(PSTR("_PUBG"), false);
             break;
         case _PSUB:
             oled_write_ln_P(PSTR("_PUBG_SUB"), false);
+            break;
+        case _MSW:
+            oled_write_ln_P(PSTR("_MSW"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
