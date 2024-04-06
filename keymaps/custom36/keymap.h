@@ -60,3 +60,9 @@ enum layer_names{
 #define SYM_ENT LT(_SYM,KC_ENT)
 #define NUM_BSPC LT(_NUM,KC_BSPC)
 #define FUN_DEL LT(_FUN,KC_DEL)
+
+#define COPY LCTL(KC_C)
+#define PSTE LCTL(KC_V)
+#define CUT LCTL(KC_X)
+#define UNDO LCTL(KC_Z)
+#define REDO LCTL(KC_Y)

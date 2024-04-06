@@ -12,7 +12,7 @@
 		</ShortcutTable>
 		<FinalConvTable/>
 	</EditorLayer>
-	<InputLayer default="0" current="0">
+	<InputLayer default="1" current="1">
 		<InputEntry>
 			<InputSchemeSetting flag="0" object="CBasicInputScheme">
 				<KeyTable name="KS X 5002 두벌식" flag="PREFIX" from="33" to="126" before="z=1, h=1, H=1">
@@ -190,27 +190,27 @@
 					<Key at="0x3F" value="0x3F"/>
 					<Key at="0x40" value="0x40"/>
 					<Key at="0x41" value="0x41^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x42" value="0x56"/>
+					<Key at="0x42" value="0x56^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x43" value="0x43^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x44" value="0x53^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x45" value="0x46^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x46" value="0x54^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x47" value="0x47"/>
-					<Key at="0x48" value="0x4D"/>
+					<Key at="0x47" value="0x47^(P&amp;1)&lt;&lt;5"/>
+					<Key at="0x48" value="0x4D^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x49" value="0x55^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x4A" value="0x4E^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x4B" value="0x45^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x4C" value="0x49^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x4D" value="0x48"/>
+					<Key at="0x4D" value="0x48^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x4E" value="0x4B^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x4F" value="0x59^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x50" value="0x22"/>
 					<Key at="0x51" value="0x51^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x52" value="0x50^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x53" value="0x52^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x54" value="0x42"/>
+					<Key at="0x54" value="0x42^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x55" value="0x4C^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x56" value="0x44"/>
+					<Key at="0x56" value="0x44^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x57" value="0x57^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x58" value="0x58^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x59" value="0x4A^(P&amp;1)&lt;&lt;5"/>
@@ -222,27 +222,27 @@
 					<Key at="0x5F" value="0x5F"/>
 					<Key at="0x60" value="0x60"/>
 					<Key at="0x61" value="0x61^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x62" value="0x76"/>
+					<Key at="0x62" value="0x76^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x63" value="0x63^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x64" value="0x73^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x65" value="0x66^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x66" value="0x74^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x67" value="0x67"/>
-					<Key at="0x68" value="0x6D"/>
+					<Key at="0x67" value="0x67^(P&amp;1)&lt;&lt;5"/>
+					<Key at="0x68" value="0x6D^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x69" value="0x75^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x6A" value="0x6E^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x6B" value="0x65^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x6C" value="0x69^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x6D" value="0x68"/>
+					<Key at="0x6D" value="0x68^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x6E" value="0x6B^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x6F" value="0x79^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x70" value="0x27"/>
 					<Key at="0x71" value="0x71^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x72" value="0x70^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x73" value="0x72^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x74" value="0x62"/>
+					<Key at="0x74" value="0x62^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x75" value="0x6C^(P&amp;1)&lt;&lt;5"/>
-					<Key at="0x76" value="0x64"/>
+					<Key at="0x76" value="0x64^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x77" value="0x77^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x78" value="0x78^(P&amp;1)&lt;&lt;5"/>
 					<Key at="0x79" value="0x6A^(P&amp;1)&lt;&lt;5"/>
@@ -268,7 +268,6 @@
 		</InputEntry>
 		<InputEntry>
 			<InputSchemeSetting object="CInputScheme"/>
-			<GeneratorSetting flag="0" object="CIme"/>
 		</InputEntry>
 	</InputLayer>
 </EditContextSetting>
