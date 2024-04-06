@@ -3,7 +3,7 @@
 Refer to Miryoku Layout (COLEMAK-DH)  
 ![alt text](https://github.com/manna-harbour/miryoku/raw/master/data/cover/miryoku-kle-cover.png)  
 
-BASE Layer - COLEMAKDH  
+BASE Layer
 ![alt text](docs/BASE.png)
 
 [home_row_mods_tutorial](https://precondition.github.io/home-row-mods)  
