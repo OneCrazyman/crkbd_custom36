@@ -11,20 +11,21 @@ Custum keymap for crkbd
 	#include "keymap.h"
 #endif
 
-// // Macro
-// enum custom_keycodes {
+// Macro
+enum custom_keycodes {
 //     // TG_LNG = SAFE_RANGE,  //SET2로 전환 및 한영키 실행
 // 	COPY = SAFE RANGE,
 // 	PSTE,
 // 	CUT,
 // 	UNDO,
 // 	REDO,
-// };
+	INVITE = SAFE_RANGE,
+};
 
 // static bool set2_layer = false;
 // key event record
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
 // 	// /* LAYER KEY */
 //     //     case TG_LNG:
 //     //         if(record->event.pressed){
@@ -39,11 +40,20 @@ Custum keymap for crkbd
 // 			if (record->event.pressed){
 // 				/* code */
 // 				tap_code16(LCTL(KC_C));
-// 			}
-// 			return false;	
-//     }
-// 	return true;
-// }
+		case INVITE:
+			if (record->event.pressed){
+				tap_code(KC_ENT);
+				_delay_ms(100);
+				tap_code16(PSTE);
+				_delay_ms(100);
+				tap_code(KC_ENT);
+				_delay_ms(200);
+				tap_code(KC_ESC);
+			}
+			return false;	
+    }
+	return true;
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// COLEMAK DH
@@ -53,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		   KC_LNG1, S_HOME_A,S_HOME_S,S_HOME_D,S_HOME_F, 	KC_G,		 				  KC_H,S_HOME_J,S_HOME_K,S_HOME_L,S_HOME_SCLN,KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+		    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_A,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
@@ -122,9 +132,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			 KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_INS, KC_HOME, KC_PGUP,TG(_MSW),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LNG1,
+			 INVITE,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M, KC_LCTL,  KC_END, KC_PGDN, KC_LGUI,
+			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, KC_LGUI,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											  MEDIA_ESC, KC_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC,  KC_SPC
 											//`--------------------------'  `--------------------------'
