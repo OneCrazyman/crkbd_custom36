@@ -66,3 +66,6 @@ enum layer_names{
 #define CUT LCTL(KC_X)
 #define UNDO LCTL(KC_Z)
 #define REDO LCTL(KC_Y)
+
+// Special Key
+#define FULL LALT_T(KC_ENT)

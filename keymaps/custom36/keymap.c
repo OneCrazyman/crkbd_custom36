@@ -12,48 +12,48 @@ Custum keymap for crkbd
 #endif
 
 // Macro
-enum custom_keycodes {
-//     // TG_LNG = SAFE_RANGE,  //SET2로 전환 및 한영키 실행
-// 	COPY = SAFE RANGE,
-// 	PSTE,
-// 	CUT,
-// 	UNDO,
-// 	REDO,
-	INVITE = SAFE_RANGE,
-};
+// enum custom_keycodes {
+// //     // TG_LNG = SAFE_RANGE,  //SET2로 전환 및 한영키 실행
+// // 	COPY = SAFE RANGE,
+// // 	PSTE,
+// // 	CUT,
+// // 	UNDO,
+// // 	REDO,
+// 	// INVITE = SAFE_RANGE,
+// };
 
 // static bool set2_layer = false;
 // key event record
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-// 	// /* LAYER KEY */
-//     //     case TG_LNG:
-//     //         if(record->event.pressed){
-//     //             layer_invert(_SET2);
-//     //             tap_code(KC_LNG1);
-//     //         } else {
-//     //            // nothing
-//     //         }
-// 	// 		return false;
-// 		/* 추후에 디파인으로 변경 - 메모리 차지 16 */	
-// 		case COPY:
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+// // 	// /* LAYER KEY */
+// //     //     case TG_LNG:
+// //     //         if(record->event.pressed){
+// //     //             layer_invert(_SET2);
+// //     //             tap_code(KC_LNG1);
+// //     //         } else {
+// //     //            // nothing
+// //     //         }
+// // 	// 		return false;
+// // 		/* 추후에 디파인으로 변경 - 메모리 차지 16 */	
+// // 		case COPY:
+// // 			if (record->event.pressed){
+// // 				/* code */
+// // 				tap_code16(LCTL(KC_C));
+// 		case INVITE:
 // 			if (record->event.pressed){
-// 				/* code */
-// 				tap_code16(LCTL(KC_C));
-		case INVITE:
-			if (record->event.pressed){
-				tap_code(KC_ENT);
-				_delay_ms(100);
-				tap_code16(PSTE); //16비트로 복합키를 담을 수 있다.ㅣ
-				_delay_ms(100);
-				tap_code(KC_ENT);
-				_delay_ms(200);
-				tap_code(KC_ESC);
-			}
-			return false;	
-    }
-	return true;
-}
+// 				tap_code(KC_ENT);
+// 				_delay_ms(300);
+// 				tap_code16(PSTE); //16비트로 복합키를 담을 수 있다.ㅣ
+// 				_delay_ms(100);
+// 				tap_code(KC_ENT);
+// 				_delay_ms(200);
+// 				tap_code(KC_ESC);
+// 			}
+// 			return false;	
+//     }
+// 	return true;
+// }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// COLEMAK DH
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			   KC_9,   KC_F1,   KC_F4,   KC_F2, KC_PGUP,    KC_N,                      XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LCTL,    KC_8,    KC_0,   KC_F3, KC_PGDN,    KC_M,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+			KC_LCTL,    KC_8,   KC_F5,   KC_F3, KC_PGDN,    KC_M,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 												   KC_C,  KC_SPC, _______,	  XXXXXXX, XXXXXXX, XXXXXXX
 											//`--------------------------'  `--------------------------'
@@ -132,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			 KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_INS, KC_HOME, KC_PGUP,TG(_MSW),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			 INVITE,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LNG1,
+			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, KC_LGUI,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -141,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	[_MEDIA] = LAYOUT_split_3x6_3(
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-			_______, KC_LGUI, XXXXXXX, XXXXXXX, KC_SLEP,  KC_PWR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+			_______, KC_LGUI,    FULL, XXXXXXX, KC_SLEP,  KC_PWR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -152,11 +152,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	[_NAV] = LAYOUT_split_3x6_3(
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      REDO, PSTE,  KC_INS, KC_HOME, KC_PGUP, XXXXXXX,
+			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      	  REDO,    PSTE,  KC_INS, KC_HOME, KC_PGUP, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CAPS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     UNDO, COPY,  CUT,  KC_END, KC_PGDN, _______,
+			_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     	  UNDO,    COPY,     CUT,  KC_END, KC_PGDN, _______,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 												XXXXXXX, XXXXXXX, XXXXXXX,     KC_ENT, KC_BSPC,  KC_DEL
 											//`--------------------------'  `--------------------------'
