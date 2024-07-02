@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		   KC_LNG1, S_HOME_A,S_HOME_S,S_HOME_D,S_HOME_F, 	KC_G,		 				  KC_H,S_HOME_J,S_HOME_K,S_HOME_L,S_HOME_SCLN,KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_A,
+		    KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
