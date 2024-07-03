@@ -1,4 +1,4 @@
-# CRKBD 3x6 Custom keymap for Korean
+# Wire CRKBD 3x6 Custom keymap for Korean using QMK
 
 Refer to Miryoku Layout (COLEMAK-DH)  
 ![alt text](https://github.com/manna-harbour/miryoku/raw/master/data/cover/miryoku-kle-cover.png)  
