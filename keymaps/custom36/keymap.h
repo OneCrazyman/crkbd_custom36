@@ -69,3 +69,4 @@ enum layer_names{
 
 // Special Key
 #define FULL LALT_T(KC_ENT)
+#define ALTTAB LALT_T(KC_TAB)

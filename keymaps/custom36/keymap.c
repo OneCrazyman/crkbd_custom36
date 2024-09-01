@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_LGUI,    KC_H,
+			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											       KC_C, KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
@@ -130,13 +130,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	[_MSW] = LAYOUT_split_3x6_3(
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-			 KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_INS, KC_HOME, KC_PGUP,TG(_MSW),
+			KC_LALT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_INS, KC_HOME, KC_PGUP,TG(_MSW),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, KC_LGUI,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-											  MEDIA_ESC, KC_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC,  KC_SPC
+											  MEDIA_ESC, KC_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
 	),
 	[_MEDIA] = LAYOUT_split_3x6_3(
