@@ -60,6 +60,7 @@ enum layer_names{
 #define SYM_ENT LT(_SYM,KC_ENT)
 #define NUM_BSPC LT(_NUM,KC_BSPC)
 #define FUN_DEL LT(_FUN,KC_DEL)
+#define RGB_ESC LT(_RGB, KC_ESC)
 
 #define COPY LCTL(KC_C)
 #define PSTE LCTL(KC_V)
@@ -69,4 +70,4 @@ enum layer_names{
 
 // Special Key
 #define FULL LALT_T(KC_ENT)
-#define ALTTAB LALT_T(KC_TAB)
+#define ALTTAB LALT(KC_TAB)

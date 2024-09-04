@@ -22,6 +22,27 @@ Custum keymap for crkbd
 // 	// INVITE = SAFE_RANGE,
 // };
 
+enum {
+    TD_ESC_B = SAFE_RANGE,
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_ESC_B] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_B),
+};
+
+// TD_ESC_B 키를 사용할 때
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case TD(TD_ESC_B):
+            if (record->event.pressed) {
+                register_code(KC_B);  // B 키 누르기
+            } else {
+                unregister_code(KC_B);  // B 키 떼기
+            }
+            break;
+    }
+    return true;
+}
 // static bool set2_layer = false;
 // key event record
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -59,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// COLEMAK DH
 	[BASE] = LAYOUT_split_3x6_3(
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-		   MO(_RGB),    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, MO(_RGB),
+		    RGB_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, RGB_ESC,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		    KC_CAPS,S_HOME_A,S_HOME_S,S_HOME_D,S_HOME_F, 	KC_G,		 				  KC_H,S_HOME_J,S_HOME_K,S_HOME_L,S_HOME_SCLN,KC_LNG1,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -109,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			 KC_DOT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,  KC_ESC,TG(_PUBG),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_LNG1,
+			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,LCTL(KC_M),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
+			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD_ESC_B,                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											       KC_C, KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
