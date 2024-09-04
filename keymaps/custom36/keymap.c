@@ -1,7 +1,6 @@
 /* 
 Custum keymap for crkbd
-
- */
+*/
 #include QMK_KEYBOARD_H
 #include <stdbool.h>
 
@@ -11,70 +10,8 @@ Custum keymap for crkbd
 	#include "keymap.h"
 #endif
 
-// Macro
-// enum custom_keycodes {
-// //     // TG_LNG = SAFE_RANGE,  //SET2로 전환 및 한영키 실행
-// // 	COPY = SAFE RANGE,
-// // 	PSTE,
-// // 	CUT,
-// // 	UNDO,
-// // 	REDO,
-// 	// INVITE = SAFE_RANGE,
-// };
-
-enum {
-    TD_ESC_B = SAFE_RANGE,
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD_ESC_B] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_B),
-};
-
-// TD_ESC_B 키를 사용할 때
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case TD(TD_ESC_B):
-            if (record->event.pressed) {
-                register_code(KC_B);  // B 키 누르기
-            } else {
-                unregister_code(KC_B);  // B 키 떼기
-            }
-            break;
-    }
-    return true;
-}
-// static bool set2_layer = false;
-// key event record
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-// // 	// /* LAYER KEY */
-// //     //     case TG_LNG:
-// //     //         if(record->event.pressed){
-// //     //             layer_invert(_SET2);
-// //     //             tap_code(KC_LNG1);
-// //     //         } else {
-// //     //            // nothing
-// //     //         }
-// // 	// 		return false;
-// // 		/* 추후에 디파인으로 변경 - 메모리 차지 16 */	
-// // 		case COPY:
-// // 			if (record->event.pressed){
-// // 				/* code */
-// // 				tap_code16(LCTL(KC_C));
-// 		case INVITE:
-// 			if (record->event.pressed){
-// 				tap_code(KC_ENT);
-// 				_delay_ms(300);
-// 				tap_code16(PSTE); //16비트로 복합키를 담을 수 있다.ㅣ
-// 				_delay_ms(100);
-// 				tap_code(KC_ENT);
-// 				_delay_ms(200);
-// 				tap_code(KC_ESC);
-// 			}
-// 			return false;	
-//     }
-// 	return true;
-// }
+#include "tap_dance.c"
+#include "macro.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// COLEMAK DH
@@ -132,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,LCTL(KC_M),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD_ESC_B,                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
+			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD(TD_ESC_B),                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											       KC_C, KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
