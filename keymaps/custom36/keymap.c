@@ -26,19 +26,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 											  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
 	),
-	/* 날개셋 적용으로 인한 삭제_ 쿼티배열로 콜맥자판 사용 */
-	// // COLEMAK DH
-	// [BASE] = LAYOUT_split_3x6_3(
-	// 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	// 	   MO(_RGB),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,						  KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, KC_LNG1,
-	// 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	// 		 TG_LNG,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G, 						  KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,  TG_LNG,
-	// 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	// 	    KC_LSFT,    KC_Z,    KC_X, 	  KC_C,    KC_D,    KC_V,						  KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
-	// 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-	// 										  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
-	// 										//`--------------------------'  `--------------------------'
-	// ),
 	// // Hangle_QWERTY
 	// [_SET2] = LAYOUT_split_3x6_3(
 	// 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -69,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,LCTL(KC_M),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD(TD_ESC_B),                         KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
+			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD(TD_ESC_B),                     KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-											       KC_C, KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
+											       KC_C,  KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
 	),
 	// PUBG sub layout
@@ -79,11 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			   KC_0,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			   KC_9,   KC_F1,   KC_F4,   KC_F2, KC_PGUP,    KC_N,                      XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, XXXXXXX, XXXXXXX,
+			   KC_9,   KC_F1,   KC_F4,   KC_F2, KC_PGUP,    KC_N,                      XXXXXXX, KC_MPLY, KC_VOLD, KC_VOLU, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_LCTL,    KC_8,   KC_F5,   KC_F3, KC_PGDN,    KC_M,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-												   KC_C,  KC_SPC, _______,	  XXXXXXX, XXXXXXX, XXXXXXX
+											 LCTL(KC_M),    KC_I, _______,	  XXXXXXX, XXXXXXX, XXXXXXX
 											//`--------------------------'  `--------------------------'
 	),
 	[_MSW] = LAYOUT_split_3x6_3(
@@ -95,6 +82,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, KC_LGUI,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											  MEDIA_ESC, KC_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
+											//`--------------------------'  `--------------------------'
+	),
+	// COLEMAK DH
+	[_COLEMAK] = LAYOUT_split_3x6_3(
+		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
+		     KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,						  KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, TG(_COLEMAK),
+		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+			KC_CAPS,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G, 						  KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,  KC_LNG1,
+		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+		    KC_LSFT,    KC_Z,    KC_X, 	  KC_C,    KC_D,    KC_V,						  KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+											  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
 	),
 	[_MEDIA] = LAYOUT_split_3x6_3(

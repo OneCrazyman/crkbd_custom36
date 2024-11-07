@@ -46,6 +46,9 @@ static void oled_render_layer_state(void) {
         case _MSW:
             oled_write_ln_P(PSTR("_MSW"), false);
             break;
+        case _COLEMAK:
+            oled_write_ln_P(PSTR("_COLEMAK"), false);
+            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
             break;

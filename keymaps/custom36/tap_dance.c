@@ -7,7 +7,7 @@ typedef struct {
 
 enum {
 	SINGLE_TAP = 1,
-  	SINGLE_HOLD = 2,
+  SINGLE_HOLD = 2,
 };
 
 enum {
