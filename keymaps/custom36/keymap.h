@@ -28,7 +28,7 @@ enum layer_names{
 };
 
 /* COLEMAK-DH_BASE */
-Left-hand home row mods
+//Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
 #define HOME_R LCTL_T(KC_R)
 #define HOME_S LALT_T(KC_S)
