@@ -21,22 +21,25 @@ enum custom_keycodes{
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TD_D_TOGGLE:
-            if (!record->event.pressed) 
-                return false; // release는 무시
-
             if (d_toggle_enabled) {
-                if (d_is_pressed) {
-                    unregister_code(KC_D);
-                    d_is_pressed = false;
-                } else {
-                    register_code(KC_D);
-                    d_is_pressed = true;
+                if (record->event.pressed){
+                    if (d_is_pressed) {
+                        unregister_code(KC_D);
+                        d_is_pressed = false;
+                    } else {
+                        register_code(KC_D);
+                        d_is_pressed = true;
+                    }
                 }
             } else {
-                // 일반 D 키처럼 동작
-                tap_code(KC_D);
+                if (record->event.pressed) {
+                    register_code(KC_D);
+                } else {
+                    unregister_code(KC_D);
+                }
             }
             return false; // 처리 완료했으므로 QMK에 넘기지 않음
+        
 
         case TOGGLE_MODE:
             if (record->event.pressed) {
