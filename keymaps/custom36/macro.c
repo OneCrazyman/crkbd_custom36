@@ -11,6 +11,44 @@
 // 	// INVITE = SAFE_RANGE,
 // };
 
+enum custom_keycodes{
+    TD_D_TOGGLE = SAFE_RANGE,
+    TOGGLE_MODE,
+};
+
+
+// 실제 동작 제어
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case TD_D_TOGGLE:
+            if (!record->event.pressed) 
+                return false; // release는 무시
+
+            if (d_toggle_enabled) {
+                if (d_is_pressed) {
+                    unregister_code(KC_D);
+                    d_is_pressed = false;
+                } else {
+                    register_code(KC_D);
+                    d_is_pressed = true;
+                }
+            } else {
+                // 일반 D 키처럼 동작
+                tap_code(KC_D);
+            }
+            return false; // 처리 완료했으므로 QMK에 넘기지 않음
+
+        case TOGGLE_MODE:
+            if (record->event.pressed) {
+                d_toggle_enabled = !d_toggle_enabled; // 토글 모드 ON/OFF
+            }
+            return false;
+
+        default:
+            return true; // 다른 키는 기본 동작
+    }
+}
+
 // static bool set2_layer = false;
 // key event record
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
