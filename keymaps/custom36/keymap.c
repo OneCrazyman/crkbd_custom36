@@ -12,6 +12,7 @@ Custum keymap for crkbd
 
 // 상태 저장용 변수
 bool d_toggle_enabled = false; // 토글 모드 활성화 여부
+bool d_auto_enabled = false; // 토글 모드 활성화 여부
 bool d_is_pressed = false;     // 현재 D키가 눌린 상태인지
 
 #include "tap_dance.c"
@@ -82,25 +83,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			KC_LALT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_UP, KC_HOME, KC_PGUP,TG(_MSW),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_CAPS,    KC_A,    KC_S,    TD_D_TOGGLE,    KC_F,    KC_G,                         KC_H, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, KC_LNG1,
+			KC_CAPS,    KC_A,    KC_S,    TD_D_TOGGLE,    KC_F,    KC_G,                  KC_H, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, AUTO_MODE,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, TOGGLE_MODE,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											  MEDIA_ESC, KC_SPC,MOUSE_TAB,	  KC_ENT,NUM_BSPC, FUN_DEL 
 											//`--------------------------'  `--------------------------'
 	),
-	// COLEMAK DH
-	[_COLEMAK] = LAYOUT_split_3x6_3(
-		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-		     KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,						  KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, TG(_COLEMAK),
-		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_CAPS,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G, 						  KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,  KC_LNG1,
-		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		    KC_LSFT,    KC_Z,    KC_X, 	  KC_C,    KC_D,    KC_V,						  KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
-		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-											  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
-											//`--------------------------'  `--------------------------'
-	),
+	// // COLEMAK DH
+	// [_COLEMAK] = LAYOUT_split_3x6_3(
+	// 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
+	// 	     KC_ESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,						  KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, TG(_COLEMAK),
+	// 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+	// 		KC_CAPS,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G, 						  KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,  KC_LNG1,
+	// 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+	// 	    KC_LSFT,    KC_Z,    KC_X, 	  KC_C,    KC_D,    KC_V,						  KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+	// 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+	// 										  MEDIA_ESC, NAV_SPC,MOUSE_TAB,	  SYM_ENT,NUM_BSPC, FUN_DEL
+	// 										//`--------------------------'  `--------------------------'
+	// ),
 	[_MEDIA] = LAYOUT_split_3x6_3(
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			_______, KC_LGUI,    FULL, XXXXXXX, KC_SLEP,  KC_PWR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,

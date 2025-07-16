@@ -14,6 +14,7 @@
 enum custom_keycodes{
     TD_D_TOGGLE = SAFE_RANGE,
     TOGGLE_MODE,
+    AUTO_MODE,
 };
 
 
@@ -46,7 +47,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 d_toggle_enabled = !d_toggle_enabled; // 토글 모드 ON/OFF
             }
             return false;
-
+        
+        case AUTO_MODE:
+            if (record->event.pressed){
+                if (d_is_pressed) {
+                    unregister_code(KC_D);
+                    unregister_code(KC_SPC);
+                    d_is_pressed = false;
+                } else {
+                    register_code(KC_D);
+                    register_code(KC_SPC);
+                    d_is_pressed = true;
+                }
+            }
+            return false; // 처리 완료했으므로 QMK에 넘기지 않음
         default:
             return true; // 다른 키는 기본 동작
     }
