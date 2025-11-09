@@ -22,12 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define USE_MATRIX_I2C
 
-/* Select hand configuration */
-
-#define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
-
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
 
@@ -35,16 +29,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QUICK_TAP_TERM 0
 
 // Mouse key speed and acceleration.
-#undef MOUSEKEY_DELAY
-#define MOUSEKEY_DELAY          0
-#undef MOUSEKEY_INTERVAL
-#define MOUSEKEY_INTERVAL       16
-#undef MOUSEKEY_WHEEL_DELAY
-#define MOUSEKEY_WHEEL_DELAY    0
-#undef MOUSEKEY_MAX_SPEED
-#define MOUSEKEY_MAX_SPEED      6
-#undef MOUSEKEY_TIME_TO_MAX
-#define MOUSEKEY_TIME_TO_MAX    64
+// #undef MOUSEKEY_DELAY
+// #define MOUSEKEY_DELAY          0
+// #undef MOUSEKEY_INTERVAL
+// #define MOUSEKEY_INTERVAL       16
+// #undef MOUSEKEY_WHEEL_DELAY
+// #define MOUSEKEY_WHEEL_DELAY    0
+// #undef MOUSEKEY_MAX_SPEED
+// #define MOUSEKEY_MAX_SPEED      6
+// #undef MOUSEKEY_TIME_TO_MAX
+// #define MOUSEKEY_TIME_TO_MAX    64
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
@@ -62,5 +56,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
-
-#define FORCE_NKRO

@@ -1,3 +1,6 @@
+// this is old version
+// not work on lastest QMK
+// it work on 2023 qmk version
 /* 
 Custum keymap for crkbd
 */
@@ -5,19 +8,17 @@ Custum keymap for crkbd
 #include <stdbool.h>
 
 #ifdef OLED_ENABLE
-	// #include "oled.c"
+	#include "oled.c"
 #else
-	
+	#include "keymap.h"
 #endif
-
-#include "keymap.h"
 
 // 상태 저장용 변수
 bool d_toggle_enabled = false; // 토글 모드 활성화 여부
 bool d_auto_enabled = false; // 토글 모드 활성화 여부
 bool d_is_pressed = false;     // 현재 D키가 눌린 상태인지
 
-// #include "tap_dance.c"
+#include "tap_dance.c"
 #include "macro.c"
 
 
@@ -75,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,LCTL(KC_M),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V, XXXXXXX,                     KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
+			KC_LSFT,    KC_Z,    KC_X, KC_LALT,    KC_V,TD(TD_ESC_B),                     KC_N,    KC_M, KC_COMM,  ALTTAB, KC_LGUI,    KC_H,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 											       KC_C,  KC_SPC,MO(_PSUB),	  SYM_ENT,NUM_BSPC, FUN_DEL
 											//`--------------------------'  `--------------------------'
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		//,-----------------------------------------------------.                    ,-----------------------------------------------------.
 			KC_LALT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,  KC_UP, KC_HOME, KC_PGUP,TG(_MSW),
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-			KC_CAPS,    KC_A,    KC_S,    D_TOGGLE,    KC_F,    KC_G,                  KC_H, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, AUTO_MODE,
+			KC_CAPS,    KC_A,    KC_S,    TD_D_TOGGLE,    KC_F,    KC_G,                  KC_H, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, AUTO_MODE,
 		//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 			KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,  	KC_B,                         KC_N,    KC_M,  KC_DEL,  KC_END, KC_PGDN, TOGGLE_MODE,
 		//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -182,12 +183,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 										//`--------------------------'  `--------------------------'
 	),
 };
-
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-  [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MPRV, KC_MNXT), ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(KC_RGHT, KC_LEFT), },
-  [1] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MPRV, KC_MNXT), ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(KC_RGHT, KC_LEFT), },
-  [2] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MPRV, KC_MNXT), ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(KC_RGHT, KC_LEFT), },
-  [3] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MPRV, KC_MNXT), ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(KC_RGHT, KC_LEFT), },
-};
-#endif
