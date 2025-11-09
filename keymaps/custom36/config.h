@@ -25,6 +25,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
 
+// 두번째 corne 연결 문제 해결
+#define SPLIT_USB_DETECT
+#define SPLIT_WATCHDOG_ENABLE
+
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
