@@ -77,4 +77,5 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
  [`colemak.set`](docs/colemak.set) 또는 [`colemak.xml`](docs/colemak.xml)
 
 -------------------------------
-qmk `1.1.5`
+old version: qmk `1.1.5`
+latest version: qmk `1.1.8`
