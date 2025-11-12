@@ -1,6 +1,6 @@
 /*
 This is the c configuration file for the keymap
-
+ㄹㄹ  
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
 
@@ -21,13 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 //#define USE_MATRIX_I2C
+#define SPLIT_USB_DETECT
+#define SPLIT_WATCHDOG_ENABLE
 
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
-
-// 두번째 corne 연결 문제 해결
-#define SPLIT_USB_DETECT
-#define SPLIT_WATCHDOG_ENABLE
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
