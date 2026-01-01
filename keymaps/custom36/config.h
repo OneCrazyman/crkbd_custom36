@@ -1,6 +1,5 @@
 /*
 This is the c configuration file for the keymap
-ㄹㄹ  
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
 
@@ -21,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 //#define USE_MATRIX_I2C
+
+// 저가 클론 아두이노에서 자주 일어나는 연결 버그 현상 해결
 #define SPLIT_USB_DETECT
 #define SPLIT_WATCHDOG_ENABLE
 
@@ -30,17 +31,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// Mouse key speed and acceleration.
-// #undef MOUSEKEY_DELAY
-// #define MOUSEKEY_DELAY          0
-// #undef MOUSEKEY_INTERVAL
-// #define MOUSEKEY_INTERVAL       16
-// #undef MOUSEKEY_WHEEL_DELAY
-// #define MOUSEKEY_WHEEL_DELAY    0
-// #undef MOUSEKEY_MAX_SPEED
-// #define MOUSEKEY_MAX_SPEED      6
-// #undef MOUSEKEY_TIME_TO_MAX
-// #define MOUSEKEY_TIME_TO_MAX    64
+// Kinetic Mousekey
+// Accelerated mode(Default)와 달리 조금 더 부드러운 증가
+#define MOUSEKEY_KINETIC_SPEED
+#define MOUSEKEY_INTERVAL          8
+#define MOUSEKEY_INITIAL_SPEED     4
+#define MOUSEKEY_BASE_SPEED        20
+#define MOUSEKEY_ACCELERATED_SPEED 100
+#define MOUSEKEY_DELAY             0
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
