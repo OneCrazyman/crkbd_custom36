@@ -35,9 +35,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Accelerated mode(Default)와 달리 조금 더 부드러운 증가
 #define MOUSEKEY_KINETIC_SPEED
 #define MOUSEKEY_INTERVAL          8
-#define MOUSEKEY_INITIAL_SPEED     4
-#define MOUSEKEY_BASE_SPEED        20
-#define MOUSEKEY_ACCELERATED_SPEED 100
+#define MOUSEKEY_INITIAL_SPEED     1
+#define MOUSEKEY_BASE_SPEED        1
+#define MOUSEKEY_MOVE_DELTA        2
+#define MOUSEKEY_ACCELERATED_SPEED 60
 #define MOUSEKEY_DELAY             0
 
 #ifdef RGBLIGHT_ENABLE
